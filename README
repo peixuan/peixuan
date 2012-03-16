@@ -8,3 +8,13 @@ http://git.gnome.org/browse/gegl/
 
 GIMP:
 http://www.gimp.org/
+
+GEGL OpenCL operations:
+bilateral-filter
+c2g
+edge-laplace
+edge-sobel
+grey
+mono-mixer
+motion-blur
+snn-mean
