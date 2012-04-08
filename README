@@ -9,7 +9,7 @@ http://git.gnome.org/browse/gegl/
 GIMP:
 http://www.gimp.org/
 
-GEGL OpenCL operations:
+GEGL OpenCL operations merged:
 bilateral-filter
 c2g
 edge-laplace
@@ -18,3 +18,5 @@ grey
 mono-mixer
 motion-blur
 snn-mean
+
+GEGL_USE_OPENCL=yes
