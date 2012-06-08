@@ -24,3 +24,7 @@ motion-blur
 snn-mean
 
 GEGL_USE_OPENCL=yes
+
+JPEG:
+http://www.ijg.org/
+http://www.libjpeg-turbo.org/
