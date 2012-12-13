@@ -1,0 +1,20 @@
+JPEG OpenCL
+
+Completed:
+inverse quantization
+IDCT
+up-sample
+color conversion
+
+Working:
+Huffman decoding
+
+Chromium discussion:
+https://groups.google.com/a/chromium.org/forum/?fromgroups=#!topic/chromium-discuss/qCDA2nxiu2A
+
+AMD A10M:
+4096x3200 CPU 177ms GPU 98ms
+1920x1080 CPU 31ms GPU 22ms
+1024x768 CPU 10ms GPU 6ms
+
+without parallel Huffman decoding
