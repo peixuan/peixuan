@@ -18,3 +18,7 @@ AMD A10M:
 1024x768 CPU 10ms GPU 6ms
 
 without parallel Huffman decoding
+
+libjpeg-turbo patch:
+https://sourceforge.net/p/libjpeg-turbo/patches/40/
+base r990

@@ -28,3 +28,7 @@ GEGL_USE_OPENCL=yes
 JPEG:
 http://www.ijg.org/
 http://www.libjpeg-turbo.org/
+
+libjpeg-turbo OpenCL:
+https://sourceforge.net/p/libjpeg-turbo/patches/40/
+jpeg-opencl
