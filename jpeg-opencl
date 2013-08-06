@@ -21,4 +21,12 @@ without parallel Huffman decoding
 
 libjpeg-turbo patch:
 https://sourceforge.net/p/libjpeg-turbo/patches/40/
-base r990
+base r996
+
+Build:
+./configure --with-opencl-dec
+
+Tested:
+AMD CPU/GPU
+Intel Ivy Bridge CPU/GPU
+NVIDIA GTX 680
