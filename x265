@@ -1,0 +1,8 @@
+x265
+https://bitbucket.org/multicoreware/x265
+
+CLI reconstructed video preview:
+--recon-y4m-exec "ffplay -i pipe:0 -autoexit"
+
+source/output/reconplay.cpp
+source/output/reconplay.h
