@@ -6,3 +6,7 @@ CLI reconstructed video preview:
 
 source/output/reconplay.cpp
 source/output/reconplay.h
+
+Released in x265 1.7:
+http://x265.readthedocs.org/en/1.7/
+http://mailman.videolan.org/pipermail/x265-devel/2015-May/008227.html
