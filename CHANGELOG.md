@@ -8,6 +8,16 @@ notable repository milestones.
 
 ## Unreleased
 
+## 2019-10-02
+
+### Added
+
+- Added category and tag index pages.
+
+### Changed
+
+- Switched the site theme to NexT 7.4.0 with the Pisces layout.
+
 ## 2018-12-31
 
 ### Added
