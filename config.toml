@@ -1,0 +1,79 @@
+baseURL = "https://www.zhangpeixuan.cn/"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh"
+title = "詩情花意"
+theme = "next"
+
+enableRobotsTXT = true
+hasCJKLanguage = true
+paginate = 10
+paginatePath = "page"
+preserveTaxonomyNames = true
+
+[uglyURLs]
+  post = true
+
+[permalinks]
+  post = "/:year/:month/:day/:filename"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[frontmatter]
+  lastmod = ["updated", "lastmod", ":git", "date"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    noClasses = false
+
+[author]
+  name = "Zhang Peixuan"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]
+  name = "首頁"
+  pre = "home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "歸檔"
+  pre = "archive"
+  url = "/post/"
+  weight = 20
+
+[[menu.main]]
+  name = "標籤"
+  pre = "tags"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  name = "分類"
+  pre = "th"
+  url = "/categories/"
+  weight = 40
+
+[params]
+  introduce = "Zhang Peixuan's Personal Space"
+  subtitle = "Zhang Peixuan's Personal Space"
+  description = "吉林長春德惠人，畢業於吉林大學計算機科學與技術學院，開源社區代碼貢獻者張沛軒的個人博客。"
+  keywords = "张沛轩, 張沛軒, Zhang Peixuan, Peixuan Zhang, 德惠, Dehui"
+  authorImg = "/img/avatar.png"
+  dateFormat = "2006-01-02"
+  yearFormat = "2006年"
+  monthFormat = "01-02"
+  fancybox = false
+  socials = []
+  share = { enabled = false }
