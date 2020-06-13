@@ -8,6 +8,12 @@ notable repository milestones.
 
 ## Unreleased
 
+## 2020-06-13
+
+### Changed
+
+- Migrated the site to Hugo 0.72 with the NexT theme.
+
 ## 2019-10-02
 
 ### Added

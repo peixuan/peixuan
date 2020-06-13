@@ -1,16 +1,12 @@
 ---
-layout: post
 title: Polaris的故事（01）
 date: 2011-06-28 19:56:21
-updated: 2011-06-28 19:56:21
-comments: true
+lastmod: 2011-06-28 19:56:21
 tags:
 - 爾等闔家皆魯猿
 categories:
 - 生活軌跡
 - 人物故事
-permalink:
-keywords:
 ---
 
 > <p align="left">鉴于有人不知道阿门铮铮是谁，在这里我将发表系列日志，彻头彻尾像大家介绍铮铮，欢迎转载和分享，敬请期待！</p>

@@ -1,16 +1,12 @@
 ---
-layout: post
 title: 国际反思日——我们在反思
 date: 2004-04-07 20:36:11
-updated: 2004-04-07 20:36:11
-comments: true
+lastmod: 2004-04-07 20:36:11
 tags:
 - 世界歷史
 categories:
 - 文政史哲
 - 以史為鏡
-permalink:
-keywords:
 ---
 
 　　今天是国际反思日。

@@ -1,16 +1,12 @@
 ---
-layout: post
 title: 有关魏延的短文两则
 date: 2004-01-21 15:39:51
-updated: 2015-11-16 16:39:20
-comments: true
+lastmod: 2015-11-16 16:39:20
 tags:
 - 魏延
 categories:
 - 文政史哲
 - 古今人物
-permalink:
-keywords:
 ---
 
 > 好多年前的稚嫩文字，最初发表于[琅邪中华文化网](http://www.langya.org/ "进入“琅邪中华文化网”")，但原文大概已经找不到了，这两篇还是因为在 [轩辕春秋文化论坛](http://www.xycq.online/ "进入“轩辕春秋文化论坛”") 再发了一遍而留下的。虽然很稚嫩，但也是年少轻狂时的记忆，权且当作茶余饭后的闲文吧。

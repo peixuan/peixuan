@@ -1,16 +1,12 @@
 ---
-layout: post
 title: 2016年终总结
 date: 2016-12-31 23:59:59
-updated: 2017-01-01 09:20:52
-comments: true
+lastmod: 2017-01-01 09:20:52
 tags:
 - 年度總結
 categories:
 - 生活軌跡
 - 年度記憶
-permalink:
-keywords:
 ---
 
 # <p align="center">时而精英，时而草芥</p>

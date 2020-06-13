@@ -12,9 +12,8 @@ request:
 
 1. Keep each pull request focused on one change.
 2. Preserve the existing front matter and Markdown style when editing posts.
-3. Do not commit generated files from `public/` or dependencies from
-   `node_modules/`.
-4. Run `hexo generate` before submitting the change.
+3. Do not commit generated files from `public/` or `resources/_gen/`.
+4. Run `hugo` before submitting the change.
 
 Describe the error, the proposed correction, and the reason for it. Include a
 reliable source when correcting a factual claim. Do not submit material that

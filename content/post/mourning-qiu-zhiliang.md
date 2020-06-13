@@ -1,16 +1,12 @@
 ---
-layout: post
 title: 悼念一位逝去的创业者
 date: 2016-05-19 20:31:46
-updated: 2016-05-19 20:31:46
-comments: true
+lastmod: 2016-05-19 20:31:46
 tags:
 - 斯人已逝
 categories:
 - 生活軌跡
 - 人物故事
-permalink:
-keywords:
 ---
 
 　　今早收到一个噩耗：我前公司的一位总监，就在一周之前去世了，猝死，昨天是头七。
