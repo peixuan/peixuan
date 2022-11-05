@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 public/
 resources/_gen/
+.hugo_build.lock

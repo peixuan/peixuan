@@ -1,10 +1,11 @@
 baseURL = "https://www.zhangpeixuan.cn/"
 languageCode = "zh-CN"
-defaultContentLanguage = "zh"
+defaultContentLanguage = "zh-cn"
 title = "詩情花意"
 theme = "next"
 
 enableRobotsTXT = true
+enableEmoji = true
 hasCJKLanguage = true
 paginate = 10
 paginatePath = "page"
@@ -28,13 +29,14 @@ preserveTaxonomyNames = true
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
+    anchorLineNos = true
     codeFences = true
     guessSyntax = false
     lineNos = true
     noClasses = false
-
-[author]
-  name = "Zhang Peixuan"
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
 
 [sitemap]
   changefreq = "weekly"
@@ -42,38 +44,218 @@ preserveTaxonomyNames = true
   filename = "sitemap.xml"
 
 [[menu.main]]
+  identifier = "home"
   name = "首頁"
   pre = "home"
-  url = "/"
+  pageRef = "/"
   weight = 10
 
 [[menu.main]]
+  identifier = "archives"
   name = "歸檔"
   pre = "archive"
-  url = "/post/"
+  pageRef = "/post"
   weight = 20
 
 [[menu.main]]
+  identifier = "tags"
   name = "標籤"
   pre = "tags"
-  url = "/tags/"
+  pageRef = "/tags"
   weight = 30
 
 [[menu.main]]
+  identifier = "categories"
   name = "分類"
   pre = "th"
-  url = "/categories/"
+  pageRef = "/categories"
   weight = 40
 
 [params]
-  introduce = "Zhang Peixuan's Personal Space"
+  mainSections = ["post"]
+  yearFormat = "2006年"
+  monthFormat = "01-02"
+  dateFormat = "2006-01-02"
+  timeFormat = "2006-01-02T15:04:05-07:00"
+  scheme = "Pisces"
+  darkmode = false
+  mobileLayoutEconomy = true
+  author = "Zhang Peixuan"
   subtitle = "Zhang Peixuan's Personal Space"
   description = "吉林長春德惠人，畢業於吉林大學計算機科學與技術學院，開源社區代碼貢獻者張沛軒的個人博客。"
   keywords = "张沛轩, 張沛軒, Zhang Peixuan, Peixuan Zhang, 德惠, Dehui"
-  authorImg = "/img/avatar.png"
-  dateFormat = "2006-01-02"
-  yearFormat = "2006年"
-  monthFormat = "01-02"
-  fancybox = false
-  socials = []
-  share = { enabled = false }
+
+  [params.favicon]
+    icon = "/imgs/icons/favicon.ico"
+    small = "/imgs/icons/favicon_16x16_next.png"
+    medium = "/imgs/icons/favicon_32_32_next.png"
+    appleTouchIcon = "/imgs/icons/apple_touch_icon_next.png"
+
+  [params.openGraph]
+    enable = true
+
+  [params.avatar]
+    url = "/imgs/hugo_next_avatar.png"
+    rounded = false
+    rotated = false
+
+  [params.footer]
+    translate = false
+    powered = false
+    [params.footer.icon]
+      name = "fa fa-heart"
+      animated = false
+      color = "#222222"
+    [params.footer.beian]
+      enable = false
+
+  [params.vendors]
+    plugins = "cdnjs"
+
+  [params.menuSets]
+    icons = true
+    transition = true
+    badges = true
+
+  [params.sidebar]
+    position = "left"
+    display = "post"
+    width = 256
+    padding = 18
+    offset = 12
+
+  [params.siteState]
+    basic = true
+    [params.siteState.statistic]
+      enable = false
+
+  [params.creativeCommons]
+    license = "by-nc-sa"
+    size = "small"
+    sidebar = false
+    post = true
+
+  [params.postMeta]
+    itemText = true
+    created = true
+    categories = true
+    wordCount = true
+    readTime = true
+    [params.postMeta.updated]
+      enable = true
+      anotherDay = true
+
+  [params.toc]
+    enable = true
+    number = true
+    wrap = false
+    expandAll = false
+    maxDepth = 3
+
+  [params.motion]
+    enable = true
+    async = true
+    [params.motion.transition]
+      postBlock = "fadeIn"
+      postHeader = "fadeInDown"
+      postBody = "fadeInDown"
+      collHeader = "fadeInLeft"
+      sidebar = "fadeInUp"
+
+  [params.themeColor]
+    light = "#222222"
+    dark = "#222222"
+
+  [params.bodyScrollbar]
+    overlay = false
+    stable = true
+
+  [params.codeblock]
+    style = "default"
+    copyBtn = true
+
+  [params.backTop]
+    enable = true
+    sidebar = false
+    scrollpercent = true
+
+  [params.readingProgress]
+    enable = true
+    start = "left"
+    position = "top"
+    reversed = false
+    color = "#37c6c0"
+    height = "3px"
+
+  [params.bookmark]
+    enable = false
+    color = "#222222"
+    save = "manual"
+
+  [params.githubBanner]
+    enable = false
+
+  [params.font]
+    enable = false
+    [params.font.global]
+      size = 1
+    [params.font.title]
+      size = 1.375
+    [params.font.headings]
+      size = 1.625
+
+  [params.socialIcons]
+    enable = false
+    iconsOnly = false
+    transition = false
+
+  [params.linksSets]
+    layout = "inline"
+
+  [params.postFooter]
+    tagIcon = true
+
+  [params.rewardSets]
+    enable = false
+    animation = false
+
+  [params.postEdit]
+    enable = false
+
+  [params.textAlign]
+    desktop = "justify"
+    mobile = "justify"
+
+  [params.localSearch]
+    enable = false
+
+  [params.algoliaSearch]
+    enable = false
+
+  [params.analytics]
+    enabled = false
+
+  [params.gitter]
+    enable = false
+
+  [params.comments]
+    enable = false
+    active = ""
+    storage = false
+
+  [params.note]
+    style = "simple"
+    icons = false
+    lightBgOffset = 0
+
+  [params.tabs]
+    [params.tabs.transition]
+      tabs = false
+      labels = true
+
+  [params.pdf]
+    enable = false
+    height = "500px"
+
+  [params.mermaid]
+    enable = false
