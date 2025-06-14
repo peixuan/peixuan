@@ -9,4 +9,4 @@ $ git submodule update --init
 $ hugo server
 ```
 
-Hugo Extended 0.129.0 or later is required.
+Hugo Extended 0.147.8 or later is required.
