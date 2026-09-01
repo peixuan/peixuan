@@ -1,0 +1,100 @@
+name: Deploy site to OSS
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-site-to-oss
+  cancel-in-progress: true
+
+env:
+  HUGO_VERSION: 0.165.0
+  HUGO_SHA256: f43494894cdf4a8630a201d5c828051c77f523cc66bb3938b30806835470ac20
+  OSSUTIL_VERSION: 2.4.0
+  OSSUTIL_SHA256: 85edf66b2fb7238f5c7e25cab820cf29312319fe4935b7c86a6b8485eb434f3c
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Install Hugo
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          archive="hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          url="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${archive}"
+          bin_dir="${RUNNER_TEMP}/bin"
+
+          mkdir -p "${bin_dir}"
+          curl --fail --location --silent --show-error --retry 3 \
+            --output "${RUNNER_TEMP}/${archive}" "${url}"
+          echo "${HUGO_SHA256}  ${RUNNER_TEMP}/${archive}" | sha256sum --check --strict -
+          tar -xzf "${RUNNER_TEMP}/${archive}" -C "${bin_dir}" hugo
+          chmod 0755 "${bin_dir}/hugo"
+          echo "${bin_dir}" >> "${GITHUB_PATH}"
+
+      - name: Build site
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          hugo version
+          hugo --cleanDestinationDir
+          test -s public/index.html
+
+      - name: Install ossutil
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          archive="ossutil-${OSSUTIL_VERSION}-linux-amd64.zip"
+          url="https://gosspublic.alicdn.com/ossutil/v2/${OSSUTIL_VERSION}/${archive}"
+          extract_dir="${RUNNER_TEMP}/ossutil"
+          bin_dir="${RUNNER_TEMP}/bin"
+
+          curl --fail --location --silent --show-error --retry 3 \
+            --output "${RUNNER_TEMP}/${archive}" "${url}"
+          echo "${OSSUTIL_SHA256}  ${RUNNER_TEMP}/${archive}" | sha256sum --check --strict -
+          unzip -q "${RUNNER_TEMP}/${archive}" -d "${extract_dir}"
+          install -m 0755 \
+            "${extract_dir}/ossutil-${OSSUTIL_VERSION}-linux-amd64/ossutil" \
+            "${bin_dir}/ossutil"
+
+      - name: Deploy to OSS
+        shell: bash
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          OSS_BUCKET: ${{ vars.OSS_BUCKET }}
+          OSS_REGION: ${{ vars.OSS_REGION }}
+        run: |
+          set -euo pipefail
+
+          : "${OSS_ACCESS_KEY_ID:?OSS_ACCESS_KEY_ID is not configured}"
+          : "${OSS_ACCESS_KEY_SECRET:?OSS_ACCESS_KEY_SECRET is not configured}"
+          : "${OSS_REGION:?OSS_REGION is not configured}"
+
+          if [[ ! "${OSS_BUCKET:-}" =~ ^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$ ]]; then
+            echo "OSS_BUCKET is missing or invalid" >&2
+            exit 1
+          fi
+
+          ossutil sync public/ "oss://${OSS_BUCKET}/" \
+            --delete \
+            --force
