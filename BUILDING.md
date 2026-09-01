@@ -3,7 +3,7 @@
 ## Requirements
 
 - Git with submodule support
-- Hugo Extended 0.147.8 or later
+- Hugo Extended 0.165.0 or later
 
 ## Checkout
 

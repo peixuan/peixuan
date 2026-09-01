@@ -1,5 +1,5 @@
 baseURL = "https://www.zhangpeixuan.cn/"
-languageCode = "zh-CN"
+locale = "zh-CN"
 defaultContentLanguage = "zh-cn"
 title = "詩情花意"
 theme = "next"
