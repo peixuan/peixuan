@@ -11,3 +11,10 @@
 <div class="theme-info">
   Theme by <a class="theme-link" href="https://github.com/hugo-next/hugo-theme-next" target="_blank">NexT</a>
 </div>
+{{ with .Site.Params.footer.beian }}
+{{ if .enable }}
+<div class="beian">
+  <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">{{ .icp }}</a>
+</div>
+{{ end }}
+{{ end }}

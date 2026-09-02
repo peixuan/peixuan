@@ -109,7 +109,8 @@ preserveTaxonomyNames = true
       animated = false
       color = "#222222"
     [params.footer.beian]
-      enable = false
+      enable = true
+      icp = "吉ICP备05008385号-1"
 
   [params.vendors]
     plugins = "cdnjs"
